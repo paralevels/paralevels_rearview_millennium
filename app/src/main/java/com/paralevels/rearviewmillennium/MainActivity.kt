@@ -10,6 +10,7 @@ import android.view.Gravity
 import android.widget.*
 import java.io.File
 import android.graphics.Color
+import android.view.View
 
 class MainActivity : Activity() {
     external fun genscene(baseDir: String, choice: Int): String
@@ -101,6 +102,11 @@ class MainActivity : Activity() {
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(0) }
         }
+        // Disable, hide, still holds space
+        if (leftText.isEmpty()) {
+            leftButton.isEnabled = false
+            leftButton.visibility = View.INVISIBLE
+        }
 
         val middleLayout = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
@@ -122,6 +128,11 @@ class MainActivity : Activity() {
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(1) }
         }
+        // Disable, hide, still holds space
+        if (rightText.isEmpty()) {
+            rightButton.isEnabled = false
+            rightButton.visibility = View.INVISIBLE
+        }
 
         // Set linear layout parameters
         val asciiParams = LinearLayout.LayoutParams(-1, -2)
@@ -141,14 +152,10 @@ class MainActivity : Activity() {
         //Build view tree
         root.addView(asciiView, asciiParams)
         root.addView(captionView, captionParams)
-        if (leftText.isNotEmpty()) {
-            buttonRow.addView(leftButton, leftButtonParams)
-        }
+        buttonRow.addView(leftButton, leftButtonParams)
         middleLayout.addView(exitButton, exitButtonParams)
         buttonRow.addView(middleLayout, middleLayoutParams)
-        if (rightText.isNotEmpty()) {
-            buttonRow.addView(rightButton, rightButtonParams)
-        }
+        buttonRow.addView(rightButton, rightButtonParams)
         root.addView(buttonRow, buttonRowParams)
 
         setContentView(root)

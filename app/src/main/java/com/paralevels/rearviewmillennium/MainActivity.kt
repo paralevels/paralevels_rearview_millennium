@@ -1,5 +1,6 @@
 package com.paralevels.rearviewmillennium
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
@@ -57,6 +58,7 @@ class MainActivity : Activity() {
         marker.writeText("1")
     }
 
+    @SuppressLint("SetTextI18n")
     private fun showScene(choice: Int) {
         val output = genscene(filesDir.absolutePath, choice)
         val lines = output.lines()
@@ -99,6 +101,7 @@ class MainActivity : Activity() {
         val leftButton = Button(this).apply {
             text = leftText
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
+            isAllCaps = false
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(0) }
         }
@@ -125,6 +128,7 @@ class MainActivity : Activity() {
         val rightButton = Button(this).apply {
             text = rightText
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
+            isAllCaps = false
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(1) }
         }

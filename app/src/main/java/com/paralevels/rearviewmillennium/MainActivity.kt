@@ -39,16 +39,20 @@ class MainActivity : Activity() {
     }
 
     private fun installAssetsOnce() {
+        // Place installed marker file
         val marker = File(filesDir, ".installed")
         if (marker.exists()) return
 
+        // Read curr file
         assets.open("curr").use { input ->
             File(filesDir, "curr").outputStream().use { output -> input.copyTo(output) }
         }
 
+        // Create local scenes/
         val scenesDir = File(filesDir, "scenes")
         scenesDir.mkdirs()
 
+        // Copy assets/scenes/ to local scenes/
         assets.list("scenes")?.forEach { name ->
             assets.open("scenes/$name").use { input ->
                 File(scenesDir, name).outputStream().use { output -> input.copyTo(output) }

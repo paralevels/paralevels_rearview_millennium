@@ -9,6 +9,7 @@ import android.util.TypedValue
 import android.view.Gravity
 import android.widget.*
 import java.io.File
+import android.graphics.Color
 
 class MainActivity : Activity() {
     external fun genscene(baseDir: String, choice: Int): String
@@ -66,24 +67,27 @@ class MainActivity : Activity() {
 
         val root = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            setPadding(16, 16, 16, 16)
+            setPadding(24, 24, 24, 24)
+            setBackgroundColor(Color.BLACK)
         }
 
         val asciiView = TextView(this).apply {
             text = ascii
             typeface = Typeface.MONOSPACE
-            setTextSize(TypedValue.COMPLEX_UNIT_PT, 7f)
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 3.7f)
             includeFontPadding = false
             setLineSpacing(0f, 1.0f)
-            gravity = Gravity.CENTER
+            setTextColor(Color.GREEN)
+            gravity = Gravity.CENTER_HORIZONTAL
         }
 
         val captionView = TextView(this).apply {
             text = caption
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
-            setTextSize(TypedValue.COMPLEX_UNIT_PT, 14f)
-            gravity = Gravity.CENTER
-            setPadding(0, 12, 0, 12)
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 8f)
+            setTextColor(Color.GRAY)
+            gravity = Gravity.TOP
+            setPadding(8, 8, 8, 8)
         }
 
         val buttonRow = LinearLayout(this).apply {
@@ -93,24 +97,59 @@ class MainActivity : Activity() {
 
         val leftButton = Button(this).apply {
             text = leftText
-            setTextSize(TypedValue.COMPLEX_UNIT_PT, 32f)
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
+            setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(0) }
         }
 
-        val spacer = Space(this)
+        val middleLayout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL // Bottom-center
+        }
+
+        val exitButton = Button(this).apply {
+            text = "EXIT"
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 7f)
+            setTextColor(Color.BLUE)
+            setBackgroundColor(Color.BLACK)
+            gravity = Gravity.CENTER
+            setOnClickListener { finish() }
+        }
 
         val rightButton = Button(this).apply {
             text = rightText
-            setTextSize(TypedValue.COMPLEX_UNIT_PT, 32f)
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
+            setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(1) }
         }
 
-        root.addView(asciiView, LinearLayout.LayoutParams(-1, 0, 1f))
-        root.addView(captionView, LinearLayout.LayoutParams(-1, -2))
-        buttonRow.addView(leftButton, LinearLayout.LayoutParams(220, 220))
-        buttonRow.addView(spacer, LinearLayout.LayoutParams(0, 1, 1f))
-        buttonRow.addView(rightButton, LinearLayout.LayoutParams(220, 220))
-        root.addView(buttonRow, LinearLayout.LayoutParams(-1, -2))
+        // Set linear layout parameters
+        val asciiParams = LinearLayout.LayoutParams(-1, -2)
+        val captionParams = LinearLayout.LayoutParams(-1, 0, 1f)
+        val buttonRowParams = LinearLayout.LayoutParams(-1, -2)
+        val leftButtonParams = LinearLayout.LayoutParams(400, 240)
+        val middleLayoutParams = LinearLayout.LayoutParams(0, -1, 1f)
+        val exitButtonParams = LinearLayout.LayoutParams(120, 100)
+        val rightButtonParams = LinearLayout.LayoutParams(400, 240)
+
+        // Set margins
+        asciiParams.bottomMargin = 16
+        captionParams.topMargin = 8
+        captionParams.bottomMargin = 16
+        buttonRowParams.bottomMargin = 32
+
+        //Build view tree
+        root.addView(asciiView, asciiParams)
+        root.addView(captionView, captionParams)
+        if (leftText.isNotEmpty()) {
+            buttonRow.addView(leftButton, leftButtonParams)
+        }
+        middleLayout.addView(exitButton, exitButtonParams)
+        buttonRow.addView(middleLayout, middleLayoutParams)
+        if (rightText.isNotEmpty()) {
+            buttonRow.addView(rightButton, rightButtonParams)
+        }
+        root.addView(buttonRow, buttonRowParams)
 
         setContentView(root)
     }

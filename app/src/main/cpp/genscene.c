@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SCENE_COUNT 12
+#define SCENE_COUNT 171
 
 // Offsets for scenes, the number of extra scene jumps
 int scene_offset[SCENE_COUNT][2] = {
@@ -32,7 +32,7 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 23
     {0, 0}, // Scene 24
     {0, 0}, // Scene 25
-    {0, 0}, // Scene 26
+    {2, 0}, // Scene 26
     {0, 0}, // Scene 27
     {0, 0}, // Scene 28
     {0, 0}, // Scene 29
@@ -41,35 +41,35 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 32
     {0, 0}, // Scene 33
     {0, 0}, // Scene 34
-    {0, 0}, // Scene 35
+    {1, 0}, // Scene 35
     {0, 0}, // Scene 36
     {0, 0}, // Scene 37
     {0, 0}, // Scene 38
-    {0, 0}, // Scene 39
+    {1, 0}, // Scene 39
     {0, 0}, // Scene 40
     {0, 0}, // Scene 41
-    {0, 0}, // Scene 42
+    {1, 0}, // Scene 42
     {0, 0}, // Scene 43
     {0, 0}, // Scene 44
     {0, 0}, // Scene 45
     {0, 0}, // Scene 46
     {0, 0}, // Scene 47
-    {0, 0}, // Scene 48
+    {1, 0}, // Scene 48
     {0, 0}, // Scene 49
-    {0, 0}, // Scene 50
+    {1, 0}, // Scene 50
     {0, 0}, // Scene 51
     {0, 0}, // Scene 52
     {0, 0}, // Scene 53
-    {0, 0}, // Scene 54
+    {1, 0}, // Scene 54
     {0, 0}, // Scene 55
     {0, 0}, // Scene 56
     {0, 0}, // Scene 57
     {0, 0}, // Scene 58
     {0, 0}, // Scene 59
-    {0, 0}, // Scene 60
+    {2, 0}, // Scene 60
     {0, 0}, // Scene 61
     {0, 0}, // Scene 62
-    {0, 0}, // Scene 63
+    {1, 0}, // Scene 63
     {0, 0}, // Scene 64
     {0, 0}, // Scene 65
     {0, 0}, // Scene 66
@@ -77,15 +77,15 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 68
     {0, 0}, // Scene 69
     {0, 0}, // Scene 70
-    {0, 0}, // Scene 71
+    {1, 0}, // Scene 71
     {0, 0}, // Scene 72
     {0, 0}, // Scene 73
     {0, 0}, // Scene 74
     {0, 0}, // Scene 75
-    {0, 0}, // Scene 76
+    {2, 0}, // Scene 76
     {0, 0}, // Scene 77
     {0, 0}, // Scene 78
-    {0, 0}, // Scene 79
+    {1, 0}, // Scene 79
     {0, 0}, // Scene 80
     {0, 0}, // Scene 81
     {0, 0}, // Scene 82
@@ -96,7 +96,7 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 87
     {0, 0}, // Scene 88
     {0, 0}, // Scene 89
-    {0, 0}, // Scene 90
+    {1, 0}, // Scene 90
     {0, 0}, // Scene 91
     {0, 0}, // Scene 92
     {0, 0}, // Scene 93
@@ -112,13 +112,13 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 103
     {0, 0}, // Scene 104
     {0, 0}, // Scene 105
-    {0, 0}, // Scene 106
+    {1, 0}, // Scene 106
     {0, 0}, // Scene 107
     {0, 0}, // Scene 108
     {0, 0}, // Scene 109
     {0, 0}, // Scene 110
     {0, 0}, // Scene 111
-    {0, 0}, // Scene 112
+    {1, 0}, // Scene 112
     {0, 0}, // Scene 113
     {0, 0}, // Scene 114
     {0, 0}, // Scene 115
@@ -132,7 +132,7 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 123
     {0, 0}, // Scene 124
     {0, 0}, // Scene 125
-    {0, 0}, // Scene 126
+    {1, 0}, // Scene 126
     {0, 0}, // Scene 127
     {0, 0}, // Scene 128
     {0, 0}, // Scene 129
@@ -159,7 +159,7 @@ int scene_offset[SCENE_COUNT][2] = {
     {0, 0}, // Scene 150
     {0, 0}, // Scene 151
     {0, 0}, // Scene 152
-    {0, 0}, // Scene 153
+    {1, 0}, // Scene 153
     {0, 0}, // Scene 154
     {0, 0}, // Scene 155
     {0, 0}, // Scene 156

@@ -1,5 +1,6 @@
 package com.paralevels.rearviewmillennium
 
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
@@ -21,6 +22,8 @@ class MainActivity : Activity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen() // Custom launch screen
+
         super.onCreate(savedInstanceState)
         installAssetsOnce()
 

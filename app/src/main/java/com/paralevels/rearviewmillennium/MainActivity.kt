@@ -127,6 +127,7 @@ class MainActivity : Activity() {
             text = leftText
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
             isAllCaps = false
+            setTextColor(Color.BLACK)
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(0) }
         }
@@ -154,6 +155,7 @@ class MainActivity : Activity() {
             text = rightText
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 10f)
             isAllCaps = false
+            setTextColor(Color.BLACK)
             setBackgroundColor(Color.GREEN)
             setOnClickListener { showScene(1) }
         }

@@ -24,12 +24,30 @@ class MainActivity : Activity() {
         super.onCreate(savedInstanceState)
         installAssetsOnce()
 
-        val splash = TextView(this).apply {
-            text = "Rearview Millennium\nParalevels LLC"
+        val splash = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
             gravity = Gravity.CENTER
+            setBackgroundColor(Color.BLACK)
+        }
+
+        val titleView = TextView(this).apply {
+            text = "Rearview Millennium"
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 24f)
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+            setTextColor(Color.GREEN)
+            gravity = Gravity.CENTER
         }
+
+        val companyView = TextView(this).apply {
+            text = "Paralevels LLC"
+            setTextSize(TypedValue.COMPLEX_UNIT_PT, 12f)
+            typeface = Typeface.create("sans-serif", Typeface.NORMAL)
+            setTextColor(Color.GREEN)
+            gravity = Gravity.CENTER
+        }
+
+        splash.addView(titleView)
+        splash.addView(companyView)
 
         setContentView(splash)
 

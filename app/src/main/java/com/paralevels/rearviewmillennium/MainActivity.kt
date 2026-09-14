@@ -16,9 +16,13 @@ import android.view.View
 
 class MainActivity : Activity() {
     external fun genscene(baseDir: String, choice: Int): String
+    external fun exitResetCurr(baseDir: String)
 
     companion object {
-        init { System.loadLibrary("genscene") }
+        init {
+            System.loadLibrary("genscene")
+            System.loadLibrary("reset")
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -148,7 +152,10 @@ class MainActivity : Activity() {
             setTextColor(Color.BLUE)
             setBackgroundColor(Color.BLACK)
             gravity = Gravity.CENTER
-            setOnClickListener { finish() }
+            setOnClickListener {
+                exitResetCurr(filesDir.absolutePath)
+                finish()
+            }
         }
 
         val rightButton = Button(this).apply {

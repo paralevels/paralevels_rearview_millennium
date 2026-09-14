@@ -38,7 +38,7 @@ class MainActivity : Activity() {
         }
 
         val titleView = TextView(this).apply {
-            text = "Rearview Millennium"
+            text = getString(R.string.title_rearview_millennium)
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 24f)
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
             setTextColor(Color.GREEN)
@@ -46,7 +46,7 @@ class MainActivity : Activity() {
         }
 
         val companyView = TextView(this).apply {
-            text = "Paralevels LLC"
+            text = getString(R.string.company_paralevels)
             setTextSize(TypedValue.COMPLEX_UNIT_PT, 12f)
             typeface = Typeface.create("sans-serif", Typeface.NORMAL)
             setTextColor(Color.GREEN)

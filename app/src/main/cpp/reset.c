@@ -28,10 +28,8 @@ void exit_reset_curr(const char *base_dir)
 
     fclose(curr_file);
 
-    // Decrement, but never go below 0
-    if (current > 0) {
-        current--;
-    }
+    // Decrement
+    current--;
 
     // Write reset value back to curr
     curr_file = fopen(curr_path, "w");
